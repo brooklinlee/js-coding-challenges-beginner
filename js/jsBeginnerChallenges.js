@@ -65,7 +65,7 @@ function charCount(str) {
   return obj
 }
 
-console.log(charCount("Let's Gooooooo!!"))
+// console.log(charCount("Let's Gooooooo!!"))
 
 /*------------------------------------------
 
@@ -75,3 +75,39 @@ following output:
 { L: 1, e: 1, t: 1, "'": 1, s: 1, G: 1, o: 7, "!": 2 }
 
 ------------------------------------------*/
+
+// * Complete the 'fizzBuzz' function below.
+// *
+// * The function accepts INTEGER n as parameter.
+// */
+
+// INPUT: one number
+// OUTPUT: If i is a multiple of 3 & 5: FizzBuzz
+// If i is a multiple of 3 (but not 5): Fizz
+// If i is a multiple of 5 (but. not 3): Buzz
+// If i is not a multiple of 3 or 5: i
+
+// notes: printing 1 through n, iterating with a for each loop
+// (i=1; i < n; i++)
+// if i % 3 && i % 5 then print FizzBuzz, cont.
+// if i % 3 then print Fizz
+// if i % 5 then print Buzz
+// else print i
+
+
+function fizzBuzz(n) {
+   // Write your code here
+  let i = 0
+  for (i = 1; i <= n; i++) {
+    if ((i % 3 == 0) && (i % 5 == 0)) {
+        console.log('FizzBuzz')
+    } else if ((i % 3 == 0)) {
+        console.log('Fizz')
+    } else if ((i % 5 == 0)) {
+        console.log('Buzz')
+    } else (
+      console.log(i)
+    ) 
+  }
+}
+
