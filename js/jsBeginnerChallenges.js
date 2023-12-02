@@ -111,3 +111,37 @@ function fizzBuzz(n) {
   }
 }
 
+/* Find the Number
+
+You are given an array of integers arr and an integer k. Write a function findNumber that determines whether k is present in the array. 
+
+*/
+
+function findNumber(arr, k) {
+  for (let i=0; i< arr.length; i++) {
+      if (arr[i] === k) {
+          return 'YES'
+      } else {
+          return 'NO'
+      }
+  }
+}
+
+/* Generate Odd Numbers
+
+You are given two integers, l and r (1 <= l <= r <= 100). Write a function oddNumbers that prints all odd integers in the inclusive range from l to r.
+
+*/
+
+
+findNumber([3, 5, 2], 1)
+
+function oddNumbers(l, r) {
+  for (let i = l; i <= r; i++) {
+      if (i % 2 !== 0) {
+          console.log(i)
+      }
+  }
+}
+
+// oddNumbers (3, 8)
