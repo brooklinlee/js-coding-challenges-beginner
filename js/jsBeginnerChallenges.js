@@ -115,6 +115,8 @@ function fizzBuzz(n) {
 
 You are given an array of integers arr and an integer k. Write a function findNumber that determines whether k is present in the array. 
 
+- HackerRank
+
 */
 
 function findNumber(arr, k) {
@@ -131,6 +133,8 @@ function findNumber(arr, k) {
 
 You are given two integers, l and r (1 <= l <= r <= 100). Write a function oddNumbers that prints all odd integers in the inclusive range from l to r.
 
+- HackerRank
+
 */
 
 
@@ -145,3 +149,39 @@ function oddNumbers(l, r) {
 }
 
 // oddNumbers (3, 8)
+
+
+/* diagonalDifference
+
+Given a square matrix, calculate the absolute difference between the sums of its diagonals. 
+
+- HackerRank
+
+*/
+
+function diagonalDifference(arr) {
+  let primarySum = 0
+  let secondarySum = 0
+
+  let sqrRoot = Math.sqrt(arr.length)
+
+  for (let i = 0; i < arr.length; i += (sqrRoot + 1)) {
+    primarySum += arr[i]
+}
+for (let i = (sqrRoot - 1); i < (arr.length - 1); i += (sqrRoot - 1)) {
+  secondarySum += arr[i]
+}
+
+console.log(Math.abs(primarySum - secondarySum))
+return Math.abs(primarySum - secondarySum)
+}
+
+diagonalDifference([1, 2, 3, 4, 5, 6, 9, 8, 9])
+
+/* The above solution only works for square matricies, secondary approach to solve for all matricies below */
+
+
+// diagonalDifference([3,
+//   11, 2, 4,
+//   4, 5, 6,
+//   10, 8, -12])
