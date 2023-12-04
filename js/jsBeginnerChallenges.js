@@ -178,10 +178,28 @@ return Math.abs(primarySum - secondarySum)
 
 diagonalDifference([1, 2, 3, 4, 5, 6, 9, 8, 9])
 
-/* The above solution only works for square matricies, secondary approach to solve for all matricies below */
+/* The HackerRank problem actually has a different arr input than just a matrix array. The first num in the array is the sqrRoot that I calcuated above, ergo I don't need to find that and rather need to splice it. I misunderstood the input format when solving previously */
+
+function diagonalDifferenceTwo(arr) {
+  let primarySum = 0
+  let secondarySum = 0
+
+  let sqrRoot = arr[0]
+  let newArr = arr.slice(1)
+
+  for (let i = 0; i < newArr.length; i += sqrRoot + 1) {
+    primarySum += newArr[i]
+  }
+
+  for (let i = sqrRoot - 1; i < newArr.length - 1; i += sqrRoot - 1) {
+    secondarySum += newArr[i]
+  }
+
+  return Math.abs(primarySum - secondarySum)
+}
 
 
-// diagonalDifference([3,
-//   11, 2, 4,
-//   4, 5, 6,
-//   10, 8, -12])
+console.log(diagonalDifferenceTwo([3, 11, 2, 4, 4, 5, 6, 10, 8, -12]))
+
+
+
