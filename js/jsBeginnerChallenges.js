@@ -176,7 +176,7 @@ console.log(Math.abs(primarySum - secondarySum))
 return Math.abs(primarySum - secondarySum)
 }
 
-diagonalDifference([1, 2, 3, 4, 5, 6, 9, 8, 9])
+// diagonalDifference([1, 2, 3, 4, 5, 6, 9, 8, 9])
 
 /* The HackerRank problem actually has a different arr input than just a matrix array. The first num in the array is the sqrRoot that I calcuated above, ergo I don't need to find that and rather need to splice it. I misunderstood the input format when solving previously */
 
@@ -199,7 +199,67 @@ function diagonalDifferenceTwo(arr) {
 }
 
 
-console.log(diagonalDifferenceTwo([3, 11, 2, 4, 4, 5, 6, 10, 8, -12]))
+// console.log(diagonalDifferenceTwo([3, 11, 2, 4, 4, 5, 6, 10, 8, -12]))
+
+/* What Javascript statement in place of "?" will make the result always be between 6 and 7? const x = 2; let y = 4; function update(arg) { return Math.random() + y * arg; } y = 2; ?; const result = update(x); * */
+
+const x = 2;
+let y = 4;
+
+function update(arg) {
+  return Math.random() + y * arg;
+}
+
+y = 2;
+
+// ?; // The statement to be replaced
+
+const result = update(x);
+
+/* Solve Meal Cost
+
+Given the meal price (base cost of a meal), tip percent (the percentage of the meal price being added as tip), and tax percent (the percentage of the meal price being added as tax) for a meal, find and print the meal's total cost. Round the result to the nearest integer.
+
+HackerRank
+*/
+
+function solve(meal_cost, tip_percent, tax_percent) {
+  let total = 0
+  total += (tip_percent/100 * meal_cost)
+  total += (tax_percent/100 * meal_cost)
+  total += meal_cost
+  console.log(Math.round(total))
+  return Math.round(total)
+}
+
+// solve(12.00, 20, 8)
+
+/* readLine
 
 
+Given an array of integers, calculate the ratios of its elements that are positive, negative, and zero. Print the decimal value of each fraction on a new line with  places after the decimal. 
 
+HackerRank
+*/
+
+function plusMinus(arr) {
+  let posTotal = 0
+  let negTotal = 0
+  let zeroTotal = 0
+  arr.forEach(num => {
+    if (num === 0) {
+      zeroTotal += 1 
+    } else if (num < 0) {
+      negTotal += 1
+    } else {
+      posTotal += 1
+    }
+  })
+  let percentages = [posTotal , negTotal, zeroTotal].map(total => total / arr.length)
+  percentages.forEach(percent => {
+      console.log(percent.toFixed(6))
+  }) 
+}
+
+
+console.log(plusMinus([-4, 3, -9, 0, 4, 1]))
